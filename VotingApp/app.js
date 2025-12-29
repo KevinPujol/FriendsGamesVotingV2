@@ -394,7 +394,7 @@ async function syncVote(gameId, isAdding) {
     if (!db) return;
 
     try {
-        const voteRef = ref(db, `votes / ${currentPlayer}/${gameId}`);
+        const voteRef = ref(db, `votes/${currentPlayer}/${gameId}`);
         if (isAdding) {
             await set(voteRef, Date.now());
         } else {
