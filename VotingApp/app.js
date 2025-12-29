@@ -329,16 +329,20 @@ function renderGames() {
         const isVoted = currentVotes.includes(game.id);
 
         card.innerHTML = `
-            < div class="game-content" >
-                <iframe
-                    src="https://www.instagram.com/p/${game.videoId}/embed"
-                    frameborder="0"
-                    scrolling="no"
+            <div class="game-content">
+                <div class="loader-container" id="loader-${game.id}">
+                    <div class="spinner"></div>
+                </div>
+                <iframe 
+                    src="https://www.instagram.com/p/${game.videoId}/embed" 
+                    frameborder="0" 
+                    scrolling="no" 
                     allowtransparency="true"
-                    style="width: 100%; height: 100%;">
+                    onload="document.getElementById('loader-${game.id}').style.display='none'"
+                    style="width: 100%; height: 100%; position: relative; z-index: 2;">
                 </iframe>
-            </div >
-
+            </div>
+            
             <div class="game-info-section">
                 <div class="game-text">
                     <h2>${game.title}</h2>
