@@ -329,24 +329,26 @@ function renderGames() {
         const isVoted = currentVotes.includes(game.id);
 
         card.innerHTML = `
-            <div class="game-content">
-                <iframe 
-                    src="https://www.instagram.com/p/${game.videoId}/embed" 
-                    frameborder="0" 
-                    scrolling="no" 
+            < div class="game-content" >
+                <iframe
+                    src="https://www.instagram.com/p/${game.videoId}/embed"
+                    frameborder="0"
+                    scrolling="no"
                     allowtransparency="true"
-                    style="width: 100%; height: 100%; position: absolute; top:0; left:0;">
+                    style="width: 100%; height: 100%;">
                 </iframe>
-                 <!-- Overlay for title and voting actions (z-index higher than iframe) -->
-                 <div class="game-info-overlay" style="pointer-events: none;"> <!-- pointer-events none to let clicks pass to iframe, but we need buttons to work -->
-                    <div class="game-text" style="pointer-events: auto;">
-                        <h2>${game.title}</h2>
-                        <a href="https://www.instagram.com/p/${game.videoId}/" target="_blank">Abrir en Instagram <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                    <button class="vote-action-btn ${isVoted ? 'voted' : ''}" style="pointer-events: auto;" onclick="toggleVote('${game.id}', this)">
-                        <i class="fas fa-heart"></i>
-                    </button>
-                 </div>
+            </div >
+
+            <div class="game-info-section">
+                <div class="game-text">
+                    <h2>${game.title}</h2>
+                    <a href="https://www.instagram.com/p/${game.videoId}/" target="_blank">
+                        Abrir en Instagram <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                <button class="vote-action-btn ${isVoted ? 'voted' : ''}" onclick="toggleVote('${game.id}', this)">
+                    <i class="fas fa-heart"></i>
+                </button>
             </div>
         `;
         gamesFeed.appendChild(card);
@@ -388,7 +390,7 @@ async function syncVote(gameId, isAdding) {
     if (!db) return;
 
     try {
-        const voteRef = ref(db, `votes/${currentPlayer}/${gameId}`);
+        const voteRef = ref(db, `votes / ${currentPlayer}/${gameId}`);
         if (isAdding) {
             await set(voteRef, Date.now());
         } else {
