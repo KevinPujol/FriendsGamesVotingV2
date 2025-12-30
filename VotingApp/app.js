@@ -412,20 +412,24 @@ function renderLeaderboard() {
 
     itemsToShow.forEach((item, index) => {
         const rank = index + 1;
-        const div = document.createElement('div');
-        div.className = `leaderboard-item ${rank <= 3 ? 'top-3' : ''}`;
+        const link = document.createElement('a');
+        link.className = `leaderboard-item ${rank <= 3 ? 'top-3' : ''}`;
+        link.href = `https://www.instagram.com/p/${item.videoId}/`;
+        link.target = "_blank";
+        link.style.textDecoration = 'none';
+        link.style.color = 'inherit';
 
-        div.innerHTML = `
+        link.innerHTML = `
             <div class="rank">#${rank}</div>
             <div class="info">
-                <h3>${item.title}</h3>
+                <h3>${item.title} <i class="fas fa-external-link-alt" style="font-size: 0.7em; opacity: 0.7;"></i></h3>
                 <div class="stats">
                     <span class="score-badge"><i class="fas fa-heart"></i> ${item.count}</span>
                     <span>${item.percentage}%</span>
                 </div>
             </div>
         `;
-        leaderboardList.appendChild(div);
+        leaderboardList.appendChild(link);
     });
 }
 
