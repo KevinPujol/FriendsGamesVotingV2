@@ -28,7 +28,7 @@ try {
 // --- Data ---
 const PLAYERS = [
     "Voro", "Kevin", "Uri", "Olga", "Roger",
-    "Silvia", "Álex", "Gemma", "Bela", "Javi", "Jessica"
+    "Silvia", "Àlex", "Gemma", "Bela", "Javi", "Jessica"
 ];
 
 const GAMES = [
