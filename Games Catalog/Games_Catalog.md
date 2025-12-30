@@ -324,7 +324,7 @@ Reto de coordinación donde se debe morder una galleta colgada de una cuerda ata
 
 ---
 
-## Poses Congeladas (familia de montaje)
+## Montaje Coreografiado
 **Descripción**  
 Juego creativo de montaje audiovisual basado en poses estáticas, fotos y transiciones por palmadas.
 

@@ -232,7 +232,7 @@ const GAMES = [
     },
     {
         "id": "game_34",
-        "title": "Poses Congeladas (familia de montaje)",
+        "title": "Montaje Coreografiado",
         "videoId": "DNXbFK4Mf69",
         "platform": "instagram"
     },
